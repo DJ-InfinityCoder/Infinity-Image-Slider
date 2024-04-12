@@ -19,19 +19,21 @@ function createImageSlider(containerIdOrClass, imagesUrls, transitionTime, slide
       const img = document.createElement('img');
       img.src = imageUrl;
       img.alt = 'Image';
-      img.style.width = '100%'; // Ensure images fill the container
-      img.style.objectFit = 'cover'; // Cover the container without distorting aspect ratio
+      img.style.width = '100%'; 
+      img.style.objectFit = 'cover'; 
       slider.appendChild(img);
-    });
   
-    // Add slider tracker dots
-    imagesUrls.slice(0, -1).forEach((_, index) => {
+      // Create a dot for each image
       const dot = document.createElement('div');
       dot.classList.add('dot');
       dot.style.width = dotSize + 'px';
       dot.style.height = dotSize + 'px';
       sliderTracker.appendChild(dot);
     });
+  
+    // Append a clone of the first image to the end of the slider
+    const firstImgClone = slider.children[0].cloneNode(true);
+    slider.appendChild(firstImgClone);
   
     sliderContainer.appendChild(slider);
     sliderContainer.appendChild(sliderTracker);
@@ -94,14 +96,12 @@ function createImageSlider(containerIdOrClass, imagesUrls, transitionTime, slide
       display: flex;
     }
   
-    /* Remove styles from images */
     .slider img {
-      margin: 0; /* Remove any default margin */
-      object-fit: cover; /* Ensure images cover the container without distortion */
-      flex: 0 0 auto; /* Prevent images from growing or shrinking */
+      margin: 0;
+      object-fit: cover; 
+      flex: 0 0 auto; 
     }
   
-    /* Add CSS for slider tracker */
     .slider-tracker {
       position: absolute;
       bottom: 10px;
