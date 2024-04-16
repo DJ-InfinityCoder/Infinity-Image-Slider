@@ -57,7 +57,7 @@ function ImageSlider(containerIdOrClass, imagesUrls, transitionTime, slideTime, 
   function goToSlide(index) {
     currentIndex = index;
     slider.style.transition = `transform ${transitionTime / 1000}s ease`;
-    slider.style.transform = `translateX(-${currentIndex * containerWidth}vw)`;
+    slider.style.transform = `translateX(-${currentIndex * containerWidth}px)`;
     updateTracker(currentIndex);
   }
 
