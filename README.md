@@ -3,7 +3,7 @@ Here is  CDN file for Infinte Image Slider.
 ```
 <script src="https://cdn.jsdelivr.net/gh/DJ-InfinityCoder/Infinity-Image-slider/InfiniteSlider.js"></script>
 ```
-## You have to Add this in your head Tag </br>
+## You have to Add this in your body Tag </br>
 Now You have to take script tag in you body tag with some custom div class AS GIVEN BELOW
 ```
 <script>
